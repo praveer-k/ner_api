@@ -32,7 +32,14 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
+        token_format: 'access_token'
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    
+    - uses: 'docker/login-action@v1'
+      with:
+        registry: 'gcr.io' # or REGION-docker.pkg.dev
+        username: 'oauth2accesstoken'
+        password: '${{ steps.auth.outputs.access_token }}'
 
     - name: Docker configuration
       run: |-
