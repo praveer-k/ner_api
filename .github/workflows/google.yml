@@ -11,7 +11,7 @@ env:
   GKE_CLUSTER: cluster-1
   GKE_ZONE: europe-west3-c
   DEPLOYMENT_NAME: production
-  REPOSITORY: europe-west3-docker.pkg.dev/opendatasets-349618/ner_api
+  REPOSITORY: europe-west3-docker.pkg.dev/opendatasets-349618/ner-api
   IMAGE: ner-api
 
 jobs:
